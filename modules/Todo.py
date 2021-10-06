@@ -5,18 +5,17 @@ class Todo:
     """
     A single to-do with a task and a deadline
     """
-
-    def __init__(self, task: str, desc: str, offset: float):
+    def __init__(self, task: str, desc: str, dtm: datetime):
         """
-        Makes a To-do
-
-        Parameters:
-        task (str): the task of the To-do
-        deadline_offset (float): after how many min do you need to-do notify?
+        Constructor for the to-do object
+        Args:
+            task: The To-do Heading
+            desc: To-do Description
+            dtm: datetime object
         """
-        self.time_rec = datetime.datetime.now() + datetime.timedelta(minutes=offset)
         self.task = task
         self.desc = desc
+        self.dtm = dtm
 
     def get_task(self):
         """Return the task of the to-do"""
@@ -24,7 +23,7 @@ class Todo:
 
     def get_deadline(self) -> datetime:
         """returns the deadline"""
-        return self.time_rec
+        return self.dtm
 
     def get_desc(self) -> str:
         """return the To-do Description"""
@@ -36,4 +35,4 @@ class Todo:
 
     def __repr__(self) -> str:
         """representation override"""
-        return f"todo:\n\tTask: {self.get_task()}\n\tDesc: {self.get_desc()}\n\tTime: {self.get_deadline()}"
+        return f"{self.get_task()},{self.get_desc()},{self.get_deadline()}"
