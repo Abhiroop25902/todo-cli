@@ -32,7 +32,7 @@ class TodoList:
 
     def get_next_todo(self):
         """
-        Return the next upcoming To-do in the todo list
+        Return the next upcoming To-do in the to-do list
 
         Returns: To-do Object
         """
